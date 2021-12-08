@@ -5,4 +5,5 @@ export const Paragraph = styled.p`
 	height: 6vh;
 	text-align: center;
 	margin-top: 1.6em;
+	font-size: ${({ theme, footer }) => (footer ? theme.size_xs : theme.size_s)};
 `;

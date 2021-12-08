@@ -10,8 +10,6 @@ const animateOpacity = keyframes`
   100% {
       opacity: 1;
 
-
-  
   }
 `;
 
@@ -23,6 +21,5 @@ export const Content = styled.section`
 	justify-content: center;
 	margin-bottom: 1em;
 	display: inline;
-
 	animation: ${animateOpacity} 1s ease-in-out alternate forwards;
 `;

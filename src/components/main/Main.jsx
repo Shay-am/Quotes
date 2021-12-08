@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { Button } from "../button/Button";
-import Quote from "../Quote/Quote";
+import { ButtonArrow } from "../button-arrow/Button-Arrow";
+import { Quote } from "../Quote/Quote";
 import { Wrapper } from "./Main-styled";
 import { fetchQuote } from "../../services/getQuotes";
 import { Paragraph } from "../paragrapf/Paragraf";
 
-const Main = () => {
+export const Main = () => {
 	const [quotesData, setQuotesData] = useState([]);
 	const [current, setCurrent] = useState(0);
 	const [quote, setQuote] = useState(quotesData[current]);
@@ -19,7 +19,7 @@ const Main = () => {
 		} catch (error) {
 			isError(true);
 		}
-	}, [quotesData.length]);
+	}, [quotesData]);
 
 	const prevQuote = () => {
 		current === 0 ? setCurrent(quotesData.length - 1) : setCurrent(current - 1);
@@ -35,12 +35,15 @@ const Main = () => {
 	return (
 		<>
 			<Wrapper>
-				<Button onClick={prevQuote}>Click me</Button>
-				{error ? <Paragraph>We can't find any quotes!!! Sorry</Paragraph> : <Quote key={quote} quote={quote} />}
-				<Button onClick={nextQuote}>Click me</Button>
+				<ButtonArrow left onClick={prevQuote} />
+
+				{error ? (
+					<Paragraph>We can't find any quotes!!! Sorry</Paragraph>
+				) : (
+					<Quote key={quote} quote={quote} />
+				)}
+				<ButtonArrow onClick={nextQuote} />
 			</Wrapper>
 		</>
 	);
 };
-
-export default Main;
