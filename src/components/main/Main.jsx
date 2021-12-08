@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { ButtonArrow } from "../button-arrow/Button-Arrow";
-import { Quote } from "../Quote/Quote";
+import { Quote } from "../quote/Quote";
 import { Wrapper } from "./Main-styled";
 import { fetchQuote } from "../../services/getQuotes";
 import { Paragraph } from "../paragrapf/Paragraf";

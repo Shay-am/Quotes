@@ -5,4 +5,5 @@ export const Wrapper = styled.footer`
 	width: 100vw;
 	height: 10vh;
 	bottom: 0;
+	font-weight: 700;
 `;
