@@ -37,10 +37,10 @@ export const Main = () => {
 			<Wrapper>
 				<ButtonArrow left onClick={prevQuote} />
 
-				{error ? (
-					<Paragraph>We can't find any quotes!!! Sorry</Paragraph>
-				) : (
+				{!error ? (
 					<Quote key={quote} quote={quote} />
+				) : (
+					<Paragraph>We can't find any quotes!!! Sorry</Paragraph>
 				)}
 				<ButtonArrow onClick={nextQuote} />
 			</Wrapper>

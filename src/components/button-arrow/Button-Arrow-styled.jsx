@@ -23,7 +23,6 @@ const moveLeft = keyframes`
     opacity:0.3;
 
   }
-
 `;
 
 export const RightArrow = styled.div`
